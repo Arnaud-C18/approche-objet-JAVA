@@ -12,7 +12,7 @@ public class CompteTaux extends Compte{
     @Override
     public String toString() {
         return super.toString() + "\n" +
-        "Taux de rémunération " + tauxRemuneration + "%";
+        "Taux de rémunération: " + tauxRemuneration + "%";
     }
 
     public float getTauxRemuneration() {
