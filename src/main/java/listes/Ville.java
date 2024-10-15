@@ -1,5 +1,7 @@
 package listes;
 
+import java.util.Objects;
+
 public class Ville implements Comparable<Ville>{
     String nom;
     int nbHabitants;
@@ -17,7 +19,7 @@ public class Ville implements Comparable<Ville>{
         return nbHabitants;
     }
 
-    //    @Override
+//    @Override
 //    public int compareTo(Ville autreVille) {
 //        if (this.nom.compareTo(autreVille.nom) > 0) {
 //            return 1;
@@ -35,5 +37,14 @@ public class Ville implements Comparable<Ville>{
             return -1;
         }
         return 0;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Ville)) {
+            return false;
+        }
+        Ville other = (Ville) object; // ligne non obligatoire grâce à la ligne "instance of", mais on doit remplacer other par object
+        return (nom.equals(other.getNom()) && nbHabitants == (other.getNbHabitants()));
     }
 }
